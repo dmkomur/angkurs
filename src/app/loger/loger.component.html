@@ -1,8 +1,0 @@
-<p>loger works!</p>
-<button class="btn btn-primary" (click)="handleTogleButton()">
-  Toggle secret
-</button>
-<h3 *ngIf="isSecretShow">You won the prize!</h3>
-<h5 *ngFor="let logItem of log; let i = index" [ngClass]="{ overFive: i > 4 }">
-  Button clicked {{ i }} time at {{ logItem }}
-</h5>
