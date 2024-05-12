@@ -21,8 +21,17 @@
           >To Shopping List</a
         >
       </li>
-      <li><a class="btn btn-warning" href="#">Edit Recipe</a></li>
-      <li><a class="btn btn-warning" href="#">Delete Recipe</a></li>
+      <li>
+        <a
+          class="btn btn-warning"
+          style="cursor: pointer"
+          (click)="onEditRecipe()"
+          >Edit Recipe</a
+        >
+      </li>
+      <li>
+        <a class="btn btn-danger" style="cursor: pointer">Delete Recipe</a>
+      </li>
     </ul>
   </div>
 </div>

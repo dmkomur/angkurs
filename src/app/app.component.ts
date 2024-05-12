@@ -6,8 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  activePart = 'recipe'
-  onNavigate(data: string) {
-  this.activePart = data
-}
+
 }

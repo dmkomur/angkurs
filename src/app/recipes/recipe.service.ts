@@ -17,4 +17,7 @@ export class RecipeService {
         addIngridientsToShoppning(data: Ingridient[]) {
                 this.shoppingService.addIngridients(data)
         }
+        getRecipe(i: number) {
+                return this.recipes[i]
+        }
 } 
