@@ -10,7 +10,9 @@ export class RecipeService {
                 new Recipe('Koka', 'Good yummi sup with meet and vegs', 'https://images.immediate.co.uk/production/volatile/sites/30/2022/10/Ukrainian-pork-rib-borsch--83702a8.jpg?quality=90&resize=556,505', [{name: "meat", amount: 5}, {name: "luk", amount: 2}])]
 
         chooseRecipe = new Subject<Recipe>()
-        constructor(private shoppingService: ShopppingService){}
+        constructor(private shoppingService: ShopppingService) { }
+        
+        updateRecipes = new Subject<Recipe[]>
 
         getRecipes() {
                 return this.recipes.slice()
@@ -20,5 +22,17 @@ export class RecipeService {
         }
         getRecipe(i: number) {
                 return this.recipes[i]
+        }
+        addRecipe(recipe: Recipe) {
+                this.recipes.push(recipe)
+                this.updateRecipes.next(this.recipes.slice())
+        }
+        updateRecipe(index: number, newRecipe: Recipe) {
+                this.recipes[index] = newRecipe  
+                this.updateRecipes.next(this.recipes.slice())
+        }
+        deleteRecipe(index: number) {
+                this.recipes.splice(index, 1)
+                this.updateRecipes.next(this.recipes.slice())
         }
 } 
